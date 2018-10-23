@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-cars',
@@ -6,13 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
-
-  canAddCar = false;
+  cars = [{
+    name: 'Nissan',
+    year: 2015
+  }, {
+    name: 'Mitsubishi',
+    year: 2010
+  }, {
+    name: 'Tesla',
+    year: 2018
+  }, {
+    name: 'Lexus',
+    year: 2017
+  }, {
+    name: 'Ferrary',
+    year: 2013
+  }];
 
   constructor() {
-    setTimeout(() => {
-      this.canAddCar = true
-    }, 4000 );
   }
-  
+
+  updateCarList(car: { name: string, year: number }) {
+    this.cars.push(car);
+  }
 }

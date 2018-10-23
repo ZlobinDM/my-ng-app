@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent {
-   carName = 'Ford';
-   carYear = 2015;
+  // tslint:disable-next-line:no-input-rename
+  @Input('carItem') car: { name: string, year: number };
+  carItem = false;
 }
