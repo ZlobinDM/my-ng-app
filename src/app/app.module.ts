@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
+import { BackgroundDirective } from './directives/background.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
     CarComponent,
-    AddCarComponent
+    AddCarComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,
