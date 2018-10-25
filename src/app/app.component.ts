@@ -8,10 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-app';
   headerText = 'Создание собственной лирективы';
-  // items = [1, 2, 3, 4];
-  // current = 1;
-
-  // onClick(num: number) {
-  //   this.current = num;
-  // }
 }

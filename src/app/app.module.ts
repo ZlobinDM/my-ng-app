@@ -8,6 +8,9 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { BackgroundDirective } from './directives/background.directive';
+import { SwitchTemplateComponent } from './switch-template/switch-template.component';
+import { PipesTemplateComponent } from './pipes-template/pipes-template.component';
+import { PowPipe } from './pipes-template/pow.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { BackgroundDirective } from './directives/background.directive';
     CarsComponent,
     CarComponent,
     AddCarComponent,
-    BackgroundDirective
+    BackgroundDirective,
+    SwitchTemplateComponent,
+    PipesTemplateComponent,
+    PowPipe
   ],
   imports: [
     BrowserModule,
