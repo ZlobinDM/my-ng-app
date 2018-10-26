@@ -1,13 +1,7 @@
-<p>Добавь машинку</p>
+<app-add-car></app-add-car>
 <hr>
-<app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
-<hr>
-<button class="btn btn-success" (click)="changeCarName()"> Изменить название машинки</button>
-<button class="btn btn-danger" (click)="deleteCar()"> Удалить машинку</button>
-<hr>
-<div class="list-group">
-    <app-car *ngFor="let car of cars" [carItem]="car" [carName]="car.name">
-        <h4 class="list-group-item" #carHaeading>Название: {{car.name}}</h4>
-        <p class="list-group-item">год: {{ car.year }}</p>
-    </app-car>
+<div class="col-md-8 offset-2">
+    <div class="list-group">
+        <app-car *ngFor="let car of cars" [car]="car"></app-car>
+    </div>
 </div>

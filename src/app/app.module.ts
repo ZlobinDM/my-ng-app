@@ -11,6 +11,7 @@ import { BackgroundDirective } from './directives/background.directive';
 import { SwitchTemplateComponent } from './switch-template/switch-template.component';
 import { PipesTemplateComponent } from './pipes-template/pipes-template.component';
 import { PowPipe } from './pipes-template/pow.pipe';
+import { ConsoleService } from './console.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PowPipe } from './pipes-template/pow.pipe';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

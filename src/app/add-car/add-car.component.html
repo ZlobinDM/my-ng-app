@@ -1,4 +1,7 @@
-<!-- <input type="text" class="form-control" [(ngModel)]="carName"> -->
-<input type="text" class="form-control" #carNameInput>
-<input type="text" class="form-control" #carYearInput>
-<button class="btn btn-primary" (click)="addCar(carNameInput)">Добавить автомобиль</button>
+<div class="col-md-8 offset-2">
+  <input 
+  [ngStyle]="{marginBottom: '10px'}"
+  type="text" class="form-control" [(ngModel)]="carName">
+  <button class="btn btn-primary" (click)="addCar(carName)">Добавить автомобиль</button>
+  <button class="btn btn-danger" (click)="delCar()"> Удалить машинку</button>
+</div>
