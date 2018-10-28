@@ -1,0 +1,58 @@
+<div class="div col-md-8 offset-2">
+  <form (ngSubmit)="submitForm(fotm)" #form="ngForm">
+
+    <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+      <label>Email</label>
+      <input 
+        type="text" 
+        class="form-control"
+        ngModel
+        name="email"
+        required
+        email
+        #email="ngModel"
+      >
+      <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error': pass.invalid && pass.touched}">
+      <label>Пароль</label>
+      <input 
+        type="password" 
+        class="form-control"
+        ngModel
+        name="pass"
+        required
+        #pass="ngModel"
+        >
+        <p *ngIf="pass.invalid && pass.touched">Пароль не должен быть пустым</p>
+    </div>
+    <div class="form-group">
+      <label>Выберите страну</label>
+      <select 
+        class="form-control"
+        ngModel
+        name="contry"
+      >
+        <option value="ru">Россия</option>
+        <option value="by">Белоруссия</option>
+        <option value="ua">Украина</option>
+      </select>
+    </div>
+    <div class="radio" *ngFor="let ans of answers">
+      <label>
+        <input 
+          type="radio" 
+          [value]="ans.type"
+          ngModel
+          name="pass"
+        > {{ans.text}}
+      </label>
+    </div>
+    <button 
+      class="btn btn-success" 
+      type="submit"
+      [disabled]=!form.valid
+    >Сохранить</button>
+
+  </form>
+</div>

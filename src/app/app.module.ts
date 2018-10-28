@@ -12,6 +12,7 @@ import { SwitchTemplateComponent } from './switch-template/switch-template.compo
 import { PipesTemplateComponent } from './pipes-template/pipes-template.component';
 import { PowPipe } from './pipes-template/pow.pipe';
 import { ConsoleService } from './console.service';
+import { FormTemplateComponent } from './form-template/form-template.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConsoleService } from './console.service';
     BackgroundDirective,
     SwitchTemplateComponent,
     PipesTemplateComponent,
-    PowPipe
+    PowPipe,
+    FormTemplateComponent
   ],
   imports: [
     BrowserModule,
