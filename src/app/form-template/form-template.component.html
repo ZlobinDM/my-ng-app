@@ -12,8 +12,8 @@
         <p 
           *ngIf="form.get('user.email').invalid && form.get('user.email').touched"
         >
-          <span *ngIf="form.get('user.pass').errors['email']">Введите корректный email!</span>
-          <span *ngIf="form.get('user.pass').errors['lengthError']"> Такой email уже существует</span>
+          <span *ngIf="form.get('user.pass').errors['required']">Введите корректный email!</span>
+          <span *ngIf="form.get('user.pass').errors['emailIsUsed']"> Такой email уже существует</span>
         </p>
       </div>
       
@@ -49,7 +49,11 @@
         {{ans.text}}
       </label>
     </div>
-    <button class="btn btn-success" type="submit" [disabled]="form.invalid">Сохранить</button>
+    <button 
+      class="btn btn-success" 
+      type="submit" 
+      >Сохранить</button>
+      <!-- [disabled]="form.invalid" -->
   </form>
 
   <!-- <div *ngIf="isSubmited">
