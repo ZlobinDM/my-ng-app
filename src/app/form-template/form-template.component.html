@@ -1,58 +1,60 @@
 <div class="div col-md-8 offset-2">
-  <form (ngSubmit)="submitForm(fotm)" #form="ngForm">
-
-    <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
-      <label>Email</label>
-      <input 
-        type="text" 
-        class="form-control"
-        ngModel
-        name="email"
-        required
-        email
-        #email="ngModel"
-      >
-      <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
-    </div>
-    <div class="form-group" [ngClass]="{'has-error': pass.invalid && pass.touched}">
-      <label>Пароль</label>
-      <input 
-        type="password" 
-        class="form-control"
-        ngModel
-        name="pass"
-        required
-        #pass="ngModel"
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">  
+      <div class="form-group">
+        <label>Email</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          formControlName="email"
+          [ngClass]="{'is-invalid': form.get('user.email').invalid && form.get('user.email').touched}"
         >
-        <p *ngIf="pass.invalid && pass.touched">Пароль не должен быть пустым</p>
+        <p 
+          *ngIf="form.get('user.email').invalid && form.get('user.email').touched"
+        >
+          <span *ngIf="form.get('user.pass').errors['email']">Введите корректный email!</span>
+          <span *ngIf="form.get('user.pass').errors['lengthError']"> Такой email уже существует</span>
+        </p>
+      </div>
+      
+      <div class="form-group">
+        <label>Пароль</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          formControlName="pass"
+          [ngClass]="{'is-invalid': form.get('user.pass').invalid && form.get('user.pass').touched}"
+        >
+          <p 
+            *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched"
+          >
+          <span *ngIf="form.get('user.pass').errors['required']">Пароль не должен быть пустым!</span>
+          <span *ngIf="form.get('user.pass').errors['lengthError']"> Пароль не должен быть  меньше {{charsCount}} символов!</span>
+        </p>
+          <!-- <button type="button" class="btn btn-primary" (click)="addRandomEmail()">Сгенерировать Email</button> -->
+      </div>
     </div>
     <div class="form-group">
       <label>Выберите страну</label>
-      <select 
-        class="form-control"
-        ngModel
-        name="contry"
-      >
+      <select class="form-control" formControlName="country">
         <option value="ru">Россия</option>
         <option value="by">Белоруссия</option>
         <option value="ua">Украина</option>
       </select>
     </div>
+
     <div class="radio" *ngFor="let ans of answers">
       <label>
-        <input 
-          type="radio" 
-          [value]="ans.type"
-          ngModel
-          name="pass"
-        > {{ans.text}}
+        <input type="radio" name="answer" formControlName="answer" [value]="ans.type">
+        {{ans.text}}
       </label>
     </div>
-    <button 
-      class="btn btn-success" 
-      type="submit"
-      [disabled]=!form.valid
-    >Сохранить</button>
-
+    <button class="btn btn-success" type="submit" [disabled]="form.invalid">Сохранить</button>
   </form>
+
+  <!-- <div *ngIf="isSubmited">
+    <pre>
+      {{ formData | json }}
+    </pre>
+  </div> -->
 </div>
