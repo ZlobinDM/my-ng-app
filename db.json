@@ -1,0 +1,38 @@
+{
+  "title":[{
+    "value": "Async pipe instead subscribe, Dude"
+    }
+  ],
+  "cars": [
+    {
+      "name": "Lexus",
+      "isSold": false,
+      "color": "green",
+      "id": 1
+    },
+    {
+      "name": "Lamborghini",
+      "isSold": false,
+      "color": "purple",
+      "id": 2
+    },
+    {
+      "name": "Nissan",
+      "isSold": false,
+      "color": "red",
+      "id": 3
+    },
+    {
+      "name": "Mitsubishi",
+      "isSold": false,
+      "color": "red",
+      "id": 4
+    },
+    {
+      "name": "Toyota",
+      "isSold": false,
+      "color": "yellow",
+      "id": 5
+    }
+  ]
+}

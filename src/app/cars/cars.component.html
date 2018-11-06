@@ -1,7 +1,18 @@
-<app-add-car></app-add-car>
-<hr>
 <div class="col-md-8 offset-2">
-    <div class="list-group">
-        <app-car *ngFor="let car of cars" [car]="car"></app-car>
-    </div>
+    <h1>{{appTitle | async}}</h1>
+    <input type="text" class="form-control" [(ngModel)]="carName">
+    <hr>
+    <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
+    <button class="btn btn-success" (click)="addCar()">Добавить машину</button>
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let car of cars">
+            <h2>
+                {{car.name}} ({{car.color}})
+                <button class="btn btn-sm btn-info" (click)="setNewColor(car)">Изменить цвет</button> 
+                <button class="btn btn-sm btn-danger" (click)="deleteCar(car)">Удалить</button> 
+                <span class="badge badge-pill badge-secondary" [ngStyle]="{background: car.color}">{{car.id}}</span>
+            </h2>
+        </li>
+    </ul>
 </div>

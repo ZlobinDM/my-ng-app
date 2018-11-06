@@ -52,8 +52,8 @@
     <button 
       class="btn btn-success" 
       type="submit" 
+      [disabled]="form.invalid"
       >Сохранить</button>
-      <!-- [disabled]="form.invalid" -->
   </form>
 
   <!-- <div *ngIf="isSubmited">
