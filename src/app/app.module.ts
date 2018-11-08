@@ -12,6 +12,10 @@ import { PowPipe } from './pipes-template/pow.pipe';
 import { ConsoleService } from './console.service';
 import { FormTemplateComponent } from './form-template/form-template.component';
 import { HttpModule } from '@angular/http';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -21,13 +25,15 @@ import { HttpModule } from '@angular/http';
     SwitchTemplateComponent,
     PipesTemplateComponent,
     PowPipe,
-    FormTemplateComponent
+    FormTemplateComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [ConsoleService],
   bootstrap: [AppComponent]
