@@ -1,35 +1,41 @@
 {
-  "title":[{
-    "value": "Async pipe instead subscribe, Dude"
+  "title": [
+    {
+      "value": "Async pipe instead subscribe, Dude"
     }
   ],
   "cars": [
     {
       "name": "Lexus",
+      "year": 2015,
       "isSold": false,
       "color": "green",
       "id": 1
     },
     {
       "name": "Lamborghini",
+      "year": 2005,
       "isSold": false,
       "color": "purple",
       "id": 2
     },
     {
       "name": "Nissan",
+      "year": 2003,
       "isSold": false,
       "color": "red",
       "id": 3
     },
     {
       "name": "Mitsubishi",
+      "year": 2010,
       "isSold": false,
-      "color": "red",
+      "color": "green",
       "id": 4
     },
     {
       "name": "Toyota",
+      "year": 2018,
       "isSold": false,
       "color": "yellow",
       "id": 5

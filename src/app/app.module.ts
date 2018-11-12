@@ -14,6 +14,8 @@ import { FormTemplateComponent } from './form-template/form-template.component';
 import { HttpModule } from '@angular/http';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CarPageComponent } from './car-page/car-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -26,7 +28,9 @@ import { AppRoutingModule } from './app-routing.module';
     PipesTemplateComponent,
     PowPipe,
     FormTemplateComponent,
-    HomePageComponent
+    HomePageComponent,
+    CarPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
